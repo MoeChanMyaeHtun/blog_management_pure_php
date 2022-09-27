@@ -1,0 +1,53 @@
+
+.sec-login {
+  background-color: #6e918a;
+  padding: 150px 0;
+}
+.sec-login .cmn-ttl {
+  text-align: left;
+  color: #ffffff;
+}
+.sec-login .login-box{
+  width: 500px;
+  margin: 0 auto;
+  border: 1px solid gray;
+  background-color: #b1c4c0;
+  padding:0 20px;
+  border-radius: 10px;
+}
+.sec-login .login-form{
+  margin: 30px 0;
+}
+.sec-login .login-form .formbox .form-input{
+width: 100%;
+padding: 10px 0 10px 20px;
+border-radius: 10px;
+background-color: rgba(110, 145, 138,0.2);
+border:1px solid rgba(110, 145, 138,0.3) ;
+outline: rgba(110, 145, 138,0.3);
+}
+.sec-login .login-form .formbox{
+  margin-bottom: 20px;
+}
+.sec-login .login-form .form-input::placeholder{
+  color: #6e918a;
+}
+.sec-login .login-form .cmn-btn{
+  width: 100px;
+  margin-left: 188px;
+  background-color: rgba(110, 145, 138,0.4)  ;
+  padding: 10px;
+  border: 1px solid #ffffff;
+  margin-top: 10px;
+}
+.sec-login .login-form .cmn-btn:hover{
+  border: 1px solid rgba(110, 145, 138,0.4) ;
+  color: rgba(110, 145, 138,0.4) ;
+  background-color: #ffffff;
+}
+.sec-login .txt-box {
+  margin: 10px 0 20px;
+}
+.sec-login .txt-box .forgot{
+  margin-right: 220px;
+}

@@ -1,0 +1,51 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.linner{
+  max-width: 1280px;
+  width: 98%;
+  margin: 0 auto;
+}
+.clearfix{
+  content: "";
+  clear: both;
+  display: table;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url(../font/Roboto-Bold.ttf);
+ font-weight: 700;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url(../font/Roboto-Regular.ttf);
+ font-weight: 700;
+}
+.cmn-ttl{
+  font-size: 36px;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 700;
+  text-align: center;
+  padding: 20px 0 ;
+}
+.cmn-btn{
+  width: 400px;
+  background-color: rgb(153, 154, 154);
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+  margin: 20px 0;
+  cursor: pointer;
+}
+a{
+  text-decoration: none;
+  color: #ffffff;
+  display: inline-block;
+}
+.danger{
+  color: red;
+  font-size: 12px;
+}
