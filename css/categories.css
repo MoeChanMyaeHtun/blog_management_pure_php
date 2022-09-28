@@ -1,0 +1,55 @@
+.sec-cat form{
+  width: 100%;
+  margin-top: 30px;
+}
+.sec-cat .cat-box{
+  float: left;
+  width: 600px;
+}
+.sec-cat .cat-box2{
+  float: left;
+  width: 200px;
+}
+.sec-cat .cat-box .input-gp{
+  width: 400px;
+  float: left;
+}
+.sec-cat .cat-box .cat-input{
+  width: 500px;
+  padding: 8px 5px;
+}
+.sec-cat .cat-box .cat-ttl{
+  font-family: 'Roboto',sans-serif;
+  font-weight: 600;
+ margin-right: 20px;
+  font-size: 24px;
+  float: left;
+}
+.sec-cat .cat-box2 .cat-btn{
+ padding: 10px  5px;
+ width: 150px;
+ margin: 0;
+}
+
+.sec-cat .cat-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin:50px 0;
+}
+
+.sec-cat .cat-table th{
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 700 !important;
+}
+.sec-cat .cat-table td {
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 400 ;
+}
+
+.sec-cat .cat-table tr:hover {background-color: gray;}

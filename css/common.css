@@ -21,7 +21,7 @@
 @font-face {
   font-family: 'Roboto';
   src: url(../font/Roboto-Regular.ttf);
- font-weight: 700;
+ font-weight: 400;
 }
 .cmn-ttl{
   font-size: 36px;
@@ -32,13 +32,21 @@
 }
 .cmn-btn{
   width: 400px;
-  background-color: rgb(153, 154, 154);
+  background-color: #7258a7;
+  color: #ffffff;
   padding: 5px;
   border: none;
   border-radius: 5px;
-  color: #ffffff;
   margin: 20px 0;
   cursor: pointer;
+  border: 1px solid rgba(114, 88, 167,0.4);
+  font-family: 'Roboto',sans-serif;
+  font-weight: 700;
+}
+.cmn-btn:hover{
+  background-color: #ffffff;
+  color: #7258a7;
+  border: 1px solid rgba(114, 88, 167,0.4);
 }
 a{
   text-decoration: none;

@@ -1,0 +1,51 @@
+
+.sec-header
+{
+  background-color: #7258a7;
+  padding: 20px 0;
+}
+.sec-header .header-mv{
+  float: left;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+}
+.sec-header .gnav{
+  float: right;
+}
+.sec-header .gnav ul li{
+  float: left;
+  margin-right: 100px;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+}
+.sec-header .gnav ul li a:hover,
+.sec-header .gnav ul li a.active{
+  text-decoration: underline;
+  color: #ffffff;
+}
+span{
+  color: #ffffff;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #7258a7;
+  width: 120px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.droplist{
+  margin-bottom: 5px;
+}
