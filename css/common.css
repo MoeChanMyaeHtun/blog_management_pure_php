@@ -8,7 +8,7 @@
   width: 98%;
   margin: 0 auto;
 }
-.clearfix{
+.clearfix::after{
   content: "";
   clear: both;
   display: table;
@@ -52,6 +52,7 @@ a{
   text-decoration: none;
   color: #ffffff;
   display: inline-block;
+  
 }
 .danger{
   color: red;

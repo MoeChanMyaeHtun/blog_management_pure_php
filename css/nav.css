@@ -3,6 +3,8 @@
 {
   background-color: #7258a7;
   padding: 20px 0;
+  width: 100%;
+  position:fixed;
 }
 .sec-header .header-mv{
   float: left;

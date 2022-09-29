@@ -24,10 +24,38 @@
 .post-mv .cmn-btn{
   width: 100px;
 }
+.post-mv .clear{
+  float: left;
+}
+.post-mv .create{
+  float: right;
+}
+
+/* post.php */
+
+.sec-post .create{
+  background-color: #7258a7;
+  color: #ffffff;
+  float: right;
+  margin-top: 100px;
+  width: 100px;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 18px;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 700 ;
+  border:1px solid #7258a7;
+  border-radius: 8px;
+}
+.sec-post .create:hover{
+  background-color:#ffffff ;
+  color: #7258a7;
+}
 .sec-post .post-table {
   border-collapse: collapse;
   width: 100%;
-  margin:50px 0;
+  margin:20px 0;
+  
 }
 
 .sec-post .post-table th{
@@ -35,7 +63,7 @@
   text-align: center;
   border-bottom: 1px solid #ddd;
   font-family: 'Roboto',sans-serif;
-  font-weight: 700 !important;
+  font-weight: 700 ;
   font-size: 24px;
 }
 .sec-post .post-table td {
@@ -44,5 +72,42 @@
   border-bottom: 1px solid #ddd;
   font-family: 'Roboto',sans-serif;
   font-weight: 400 ;
+}
+
+.search-container {
+  float: left;
+  margin-top: 100px;
+}
+
+input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background: #ccc;
+}
+
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+}
+/* edit.php */
+.post-img{
+  width: 100px;
 }
 
