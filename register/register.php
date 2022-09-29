@@ -18,7 +18,7 @@ if(isset($_POST['submit']))
   }
 
   if($email==''){
-    $errors['email']='user email must be empty';
+    $errors['email']='user email must be enter';
   }
 
   if($pw==''){
