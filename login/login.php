@@ -52,7 +52,7 @@ if(isset($_POST['submit'])){
       </form>
       <div class="txt-box clearfix">
       <a href="forgot.php" class="forgot">Forgot password</a>
-      <a href="createacc.php" class="create">Create new account</a>
+      <a href="../register/register.php" class="create">Create new account</a>
       </div>
       
     </div>
