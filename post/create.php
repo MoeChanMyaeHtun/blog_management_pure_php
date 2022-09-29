@@ -15,7 +15,7 @@
                 if (in_array($fileActualExt, $allowed)){
                     if($fileError === 0){
                         if($fileSize < 1000000){
-                            $fileNameNew = uniqid(rand(),true).$fileActualExt;
+                            $fileNameNew = uniqid(rand(),true).".".$fileActualExt;
                             $fileDestionation = '../img/posts/'.$fileNameNew;
                             move_uploaded_file($fileTmpName,$fileDestionation);
                         }
@@ -36,9 +36,6 @@
         $created_date = $dt->format('Y.m.d , h:i:s');
         $updated_date = $dt->format('Y.m.d , h:i:s');
 
-        // if ($file == '') {
-        //   $errors['file'] = "Image file must be choose";
-        // }
         if ($title == ''){
           $errors['title'] = "Post title must be empty";
         }
@@ -50,10 +47,26 @@
           $sql = "INSERT INTO post (`image`,`title`,`description`,`created_date`,`updated_date`)values('$fileDestionation','$title','$description','$created_date','$updated_date')";
           $result = mysqli_query($conn, $sql);
           if ($result) {
-            header("location:post.php");
+            header("location:show.php");
           }
         }
+
+        if(isset($_POST["catname"])) { 
+          foreach ($_POST['catname'] as $cat) {
+              $sl = "select last_insert_id()";
+              $query = mysqli_query($conn,$sl);
+              $row = mysqli_fetch_assoc($query);
+              $li = $row['last_insert_id()'];
+              $cat_post = "INSERT INTO post_category (post_id,cat_id) VALUES ('$li','$cat')";
+              if(mysqli_query($conn,$cat_post)){
+                  echo "<p>post_category success</p>";
+              }else{
+                  echo "Query Fail : ".mysqli_error($conn);
+              }
+             }
+             }
       }
+      
 ?>
 <?php include "../common/header.php";
     include "../common/nav.php"
@@ -83,18 +96,18 @@
       </div>
       <label for="" class="post-ttl">Title</label>
       <div class="post-inputgp">
-      <input type="test" name="title" id="" class="post-input" value="<?php echo isset($title) ? $title : '' ?>" placeholder="Enter post title">
+      <input type="text" name="title" id="" class="post-input" value="<?php echo isset($title) ? $title : '' ?>" placeholder="Enter post title">
           <span class="danger"><?php echo isset($errors['title']) ? $errors['title'] : ''; ?> </span>
           </div>
       <label for="" class="post-ttl">Description</label>
       <div class="post-inputgp">
-      <input type="test" name="description" id="" class="post-input" value="<?php echo isset($description) ? $description : '' ?>" placeholder="Enter post description">
+      <input type="text" name="description" id="" class="post-input" value="<?php echo isset($description) ? $description : '' ?>" placeholder="Enter post description">
           <span class="danger"><?php echo isset($errors['description']) ? $errors['description'] : ''; ?> </span>
       </div>
-
-      <input type="reset" value="Clear" name="reset" class="cmn-btn">
-      <input type="submit" value="Create" name="create" class="cmn-btn">
-      
+        <div class="clearfix">
+      <input type="reset" value="Clear" name="reset" class="cmn-btn clear">
+      <input type="submit" value="Create" name="create" class="cmn-btn create">
+        </div>
     </Form>
   </div>
 </section>
