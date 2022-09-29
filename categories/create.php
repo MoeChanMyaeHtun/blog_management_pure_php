@@ -63,7 +63,7 @@ if (isset($_POST['submit'])) {
           echo "<td>$out[created_date]</td>";
           echo "<td>$out[updated_date]</td>";
           echo "<td><a href='edit.php?id={$out['id']}'><i class='fa fa-edit' style='font-size:18px;color:black;margin-right:10px'></i></a>
-              <a href='destroy.php?id={$out['id']}'><i class='fa fa-close' style='font-size:18px;color:red'></i></a></td>";
+              <a href='delete.php?id={$out['id']}'><i class='fa fa-close' style='font-size:18px;color:red'></i></a></td>";
           echo "</tr>";
         }
         ?>
