@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="../css/categories.css">
   <link rel="stylesheet" href="../css/nav.css">
   <link rel="stylesheet" href="../css/post.css">
+  <link rel="stylesheet" href="../css/show.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>

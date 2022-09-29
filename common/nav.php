@@ -9,8 +9,8 @@ session_start();
     <nav class="gnav">
       <ul class="clearfix">
         <li><a href="../index.php" >Home</a></li>
-        <li><a href="../categories/categories.php" >Category</a></li>
-        <li><a href="../post/post.php">Post</a></li>
+        <li><a href="../categories/create.php" >Category</a></li>
+        <li><a href="../post/show.php">Post</a></li>
         <li>  
         <div class="dropdown">
         <span><i class="fa fa-user-o" style="font-size:24px,"></i> &nbsp;
