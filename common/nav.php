@@ -1,5 +1,5 @@
 <?php include "header.php"; 
-session_start();
+    include_once "init.php";
 ?>
 <section class="sec-header ">
   <div class="linner clearfix">
@@ -14,7 +14,8 @@ session_start();
         <li>  
         <div class="dropdown">
         <span><i class="fa fa-user-o" style="font-size:24px,"></i> &nbsp;
-        <?php if(isset($_SESSION['name'])){ echo $_SESSION['name']; } ?></span>
+        <?php 
+        if(isset($_SESSION['name'])){ echo $_SESSION['name']; } ?></span>
          <div class="dropdown-content">
           <ul>
             <li class="droplist"><a href="../login/login.php">Login</a></li>
