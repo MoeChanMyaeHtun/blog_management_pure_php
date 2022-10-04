@@ -1,7 +1,7 @@
 <?php
 include "../common/db.php";
+include_once "../common/init.php";
 
-session_start();
 if(isset($_POST['submit'])){
   $errors = [];
   $email = $_POST['email'];
@@ -25,6 +25,8 @@ if(isset($_POST['submit'])){
       $_SESSION['email'] = $email;
       $_SESSION['password'] = $pw;
       $_SESSION['name']= $out['name'];
+      $_SESSION['user_id']= $out['id'];
+      
       header("Location:../index.php");
     }
   }
