@@ -1,0 +1,124 @@
+.post-detail{
+  padding: 80px 0;
+  
+}
+.post-detail .detailbox{
+  width: 650px;
+  margin: 50px  auto;
+  box-shadow: 5px 10px 18px #888888;
+}
+/* .post-detail .detailbox .detail-txt{
+  border: 1px solid black;
+} */
+.post-detail .detailbox .cmn-ttl{
+  padding-bottom: 30px;
+}
+.post-detail .detailbox .detail-txt ul li{
+  margin-bottom: 20px;
+}
+.post-detail .detailbox .detail-txt ul li:nth-child(5){
+  margin-bottom: 0;
+}
+.post-detail .detailbox .detail-txt .ttl{
+  padding: 0 10px 20px 50px;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  float: left;
+  margin-left: 30px;
+    width: 200px;
+}
+.post-detail .detailbox .detail-txt .space{
+  float: left;
+  width: 50px;
+}
+.post-detail .detailbox .detail-txt .txt{
+  font-family: 'Roboto',sans-serif;
+  font-weight: 400;
+  width: 200px;
+  float: left;
+  margin-right: 30px;
+}
+.post-detail .detailbox .comment{
+padding: 20px 0;
+}
+.txt-cmn{
+  padding: 0 20px;
+}
+.commentBox{
+	width: 70% ;
+	padding: 10px ;
+	outline: none ;
+	font-size: 80% ;
+	resize: vertical ;
+	border: 1px solid rgba(114, 88, 167,0.6);
+	border-bottom: 4px solid rgba(114, 88, 167,0.6) ;
+  float: left ;
+}
+
+ p {
+	margin-left: 20px;
+	line-height: 30px;
+  color: #adb5bd;
+  float: left;
+  width: 200px;
+}
+.s {
+	border: 0;
+	width:	30%;
+	color: #fff;
+  padding: 10px;
+	float: right;
+	outline: none;
+	cursor: pointer;
+	font-weight: 700;
+	background-color:  rgba(114, 88, 167,0.6);
+	border-bottom: 3px solid  rgba(114, 88, 167,0.6);
+}
+
+ .s:hover {
+	color: rgba(114, 88, 167,0.6);
+	border: 1px solid rgba(114, 88, 167,0.6);
+  background-color: #ffffff;
+
+}
+
+ .s:disabled {
+	background-color: rgba(114, 88, 167,0.3);
+	border-bottom: 3px solid #d3d3d3;
+}
+
+ .comment-btn {
+	width:	30%;
+  color: #adb5bd;
+	float: right;
+	outline: none;
+	cursor: pointer;
+	font-weight: 700;
+}
+
+ .comment-btn:hover {
+  color: #7258a7;
+  }
+
+ .comment-btn:disabled {
+	background-color: rgba(114, 88, 167,0.3) ;
+	border-bottom: 3px solid rgba(114, 88, 167,0.3);
+}
+
+ .comment ul {
+	list-style: none;
+  margin: 0 20px;
+}
+
+ .comment ul li {
+	padding: 30px 10px 10px;
+  word-wrap: break-word;
+}
+
+ .comment ul li:hover {
+	border-bottom: 3px solid #00688B;
+}
+.more{
+  margin-top: 5px;
+}
