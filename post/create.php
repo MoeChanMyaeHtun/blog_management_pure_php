@@ -44,7 +44,7 @@
         }
 
         if (count($errors) == 0) {
-          $sql = "INSERT INTO post (`image`,`title`,`description`,`created_date`,`updated_date`)values('$fileDestionation','$title','$description','$created_date','$updated_date')";
+          $sql = "INSERT INTO post (`image`,`title`,`description`,`created_date`,`updated_date`)VALUES('$fileDestionation','$title','$description','$created_date','$updated_date')";
           $result = mysqli_query($conn, $sql);
           if ($result) {
             header("location:show.php");
@@ -83,7 +83,7 @@
 
       <label for="" class="post-ttl">Category</label>
       <div class="post-inputgp">
-      <select name="catname[]" class="post-input" multiple>
+      <select name="catname[]" class="post-input" id="categories"  multiple>
       <?php 
          $cat = "SELECT * FROM categories";
          $query = mysqli_query($conn,$cat);
@@ -111,6 +111,17 @@
     </Form>
   </div>
 </section>
-
+<script type="text/javascript" src="../js/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.multi-select.js"></script>
+    <script type="text/javascript">
+    $(function(){
+      
+        $('#categories').multiSelect({
+            noneText: 'All categories' ,
+          
+        });
+      
+    });
+    </script>
 
 <?php include "../common/footer.php"?>
