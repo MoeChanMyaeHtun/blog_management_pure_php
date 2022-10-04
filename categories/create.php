@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
     $sql = "INSERT INTO categories (`name`,`created_date`,`updated_date`)values('$cat_name','$created_date','$updated_date')";
     $result = mysqli_query($conn, $sql);
     if ($result) {
-      header("location:categories.php");
+      header("location:create.php");
     }
   }
 }
