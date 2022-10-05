@@ -1,5 +1,6 @@
 <?php
       include "../common/db.php";
+      include_once '../common/init.php';
       if(isset($_POST['create'])){
         $errors = [];
         $file = $_FILES['file'];
@@ -35,7 +36,7 @@
         $dt = new DateTime("now", new DateTimeZone('Asia/Yangon'));
         $created_date = $dt->format('Y.m.d , h:i:s');
         $updated_date = $dt->format('Y.m.d , h:i:s');
-
+        $user_id = $_SESSION['user_id'];       
         if ($title == ''){
           $errors['title'] = "Post title must be empty";
         }
@@ -44,7 +45,7 @@
         }
 
         if (count($errors) == 0) {
-          $sql = "INSERT INTO post (`image`,`title`,`description`,`created_date`,`updated_date`)VALUES('$fileDestionation','$title','$description','$created_date','$updated_date')";
+          $sql = "INSERT INTO post (`image`,`title`,`description`,`created_date`,`updated_date`,`user_id`)VALUES('$fileDestionation','$title','$description','$created_date','$updated_date','$user_id')";
           $result = mysqli_query($conn, $sql);
           if ($result) {
             header("location:show.php");

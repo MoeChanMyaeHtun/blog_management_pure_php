@@ -1,4 +1,4 @@
- <?php
+<?php
   include_once "../common/init.php";
   include "../common/db.php";
   $id = $_GET['id'];
