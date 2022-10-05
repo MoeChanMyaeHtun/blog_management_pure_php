@@ -1,5 +1,7 @@
-<?php include "login/logout.php";?>
-<?php include "common/header.php"; ?>
-<?php include "common/nav.php"; ?>
-<h1>Welcome</h1>
+
+<?php 
+include_once "common/init.php";
+include "common/header.php";
+      include "common/nav.php";
+?>
 <?php include "common/footer.php"?>
