@@ -27,7 +27,7 @@ if(isset($_POST['submit'])){
       $_SESSION['name']= $out['name'];
       $_SESSION['user_id']= $out['id'];
       
-      header("Location:../index.php");
+      header("Location:../post/show.php");
     }
   }
 }
