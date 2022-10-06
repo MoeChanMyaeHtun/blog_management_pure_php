@@ -29,19 +29,35 @@ include "../common/nav.php"
         $dt = new DateTime("now", new DateTimeZone('Asia/Yangon'));
         $created_date = $dt->format('Y.m.d , h:i:s');
         $updated_date = $dt->format('Y.m.d , h:i:s');
+        if ($cmn == ''){
+          $errors['cmn'] = "Comment must be enter";
+        }
+        if (count($errors) == 0) {
         $comment = "INSERT INTO comment (`pid`,`uid`,`body`,`created_date`,`updated_date`) VALUES ('$id','$userid','$cmn','$created_date','$updated_date')";
      
         $cmnres = mysqli_query($conn,$comment);
-    
+        
         if ($cmnres){
        
           header("location:detail.php?id=$id");
         }
       }
+      }
       ?>
       <div class="detail-txt">
         <h2 class="cmn-ttl">Post Detail</h2>
        <ul>
+        <li class="clearfix">
+          <div class="ttl">User</div>
+          <div class="space">:</div>
+          <?php
+          $usql = "SELECT * FROM user WHERE id={$row['user_id']}";
+          $uquery = mysqli_query($conn, $usql);
+
+          $user = mysqli_fetch_assoc($uquery);
+          ?>
+        <div class="txt"><?php echo $user['name'] ?></div>
+      </li>
         <li class="clearfix">
           <div class="ttl">Image</div>
           <div class="space">:</div>
@@ -86,7 +102,11 @@ include "../common/nav.php"
         <div>
         <form action="" method="post" class="clearfix">
         <div class="txt-cmn clearfix">
-      <input type="text" class="commentBox " placeholder="Place your comments here "  name="cmn">
+          <div class="comdiv">
+      <input type="text" class="commentBox " placeholder="Place your comments here "  name="cmn" value="<?php echo isset($cmn) ? $cmn : '' ?>">
+      <span class="danger"><?php echo isset($errors['cmn']) ? $errors['cmn']:''; ?> </span>
+          </div>
+      <!-- <input type="submit" value="SEND" class="s" name="send"> -->
       <button type="submit" class="s" name="send">SEND</button>
       </div>
      
@@ -102,14 +122,24 @@ include "../common/nav.php"
          $pcm = "SELECT comment.body,comment.id FROM comment where pid=$pID";
 
          $pql = mysqli_query($conn,$pcm);
-        //  print_r($pcm);
+      
          while($out = mysqli_fetch_array($pql))
          {
-         echo "<li class='clearfix'><p style='float:left;color:#000000;'>{$out['body']}</p><div style='float:right'>
-         <a href='cmn-edit.php?id={$out['id']}'><i class='fa fa-edit' style='font-size:18px;color:black;margin-right:20px'></i></a>
-         <a href='cmn-delete.php?id={$out['id']}' style='float:right'><i class='fa fa-close' style='font-size:18px;color:red;'></i></a></div></li>";
+         echo "<li class='clearfix'><p style='float:left;color:#000000;'>{$out['body']}</p>";
+        
+         if (isset($_SESSION['user_id'])) {
+          $user_id = $_SESSION['user_id'];
+          if ($_SESSION['name'] == $user['name']) {
+           ?>
+          <div style='float:right'> <a href='cmn-edit.php?id=<?php echo $out['id'] ?>'><i class='fa fa-edit' style='font-size:18px;color:black;margin-right:20px'></i></a>
+           <a href='cmn-delete.php?id=<?php echo $out['id'] ?>' style='float:right'><i class='fa fa-close' style='font-size:18px;color:red;'></i></a></div>
+           <?php
+          }
+        }
+         echo "</li>";
          }
       ?> 
+      
 			</ul>
       
 

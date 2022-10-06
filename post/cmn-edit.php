@@ -1,12 +1,13 @@
 <?php 
 include "../common/db.php";
 include_once "../common/init.php";
-
+$id = $_GET['id'];
 $pid = $_SESSION['post_id'];
 $cmn_id = $_GET['id'];
 $sqls = "SELECT * FROM comment WHERE id=$cmn_id";
 $results = mysqli_query($conn, $sqls);
 $rows = mysqli_fetch_assoc($results);
+
 if (isset($_POST['edit'])) {
   $errors = [];
   $cmnid = $_POST['id'];
@@ -22,7 +23,9 @@ if (isset($_POST['edit'])) {
   }
 }
 }
-
+if($rows['pid']!= $_SESSION['post_id']){
+  header("Location: detail.php?id=$pid");
+}
 ?>
 
 <?php 
@@ -38,7 +41,7 @@ include_once "../common/nav.php";
         <form action="" method="post" class="clearfix">
         <div class="txt-cmn clearfix">
         <input type="hidden" name="id" value="<?php echo $cmn_id ?>">
-      <input type="text" class="commentBox " placeholder="Place your comments here "  name="cmn" value="<?php echo $rows['body']?>">
+      <input type="text" class="upcmn commentBox " placeholder="Place your comments here "  name="cmn" value="<?php echo $rows['body']?>">
       <button type="submit" class="s" name="edit">Update</button>
       </div>
      

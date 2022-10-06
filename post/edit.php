@@ -5,7 +5,10 @@
   $sql = "SELECT * FROM post WHERE id=$id";
   $result = mysqli_query($conn, $sql);
   $row = mysqli_fetch_assoc($result);
-
+  $user_id = $_SESSION['user_id'];
+  if($row['user_id']!= $_SESSION['user_id']){
+    header('location:show.php');
+  }
 
   if (isset($_POST['edit'])) {
     $errors = [];
@@ -26,6 +29,7 @@
     if (in_array($fileActualExt, $allowed)) {
       if ($fileError === 0) {
         if ($fileSize < 1000000) {
+          unlink($row['image']);
           $fileNameNew = uniqid(rand(), true) . "." . $fileActualExt;
           $fileDestionation = '../img/posts/' . $fileNameNew;
           move_uploaded_file($fileTmpName, $fileDestionation);
@@ -48,9 +52,8 @@
         header("Location:show.php");
       }
     }
-  }
-
-
+  } 
+  
   ?>
 
  <?php
@@ -61,6 +64,7 @@
       <div class="linner">
       <h2 class="cmn-ttl">Post Edit</h2>
        <Form method="POST" class="post-form" enctype="multipart/form-data">
+      
        <label for="" class="post-ttl">Image</label>
        <div class="post-inputgp">
          <img src="<?php echo $row['image'] ?>" alt="" name="image" class="post-img">
@@ -113,7 +117,7 @@
          <span class="danger"><?php echo isset($errors['description']) ? $errors['description'] : ''; ?> </span>
        </div>
        <input type="submit" value="Update" name="edit" class="cmn-btn create">
-
+       
      </Form>
    </div>
  </section>

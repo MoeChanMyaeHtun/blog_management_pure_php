@@ -43,12 +43,17 @@ include_once "../common/nav.php";
           <button type="submit" name="search-btn"><i class="fa fa-search"></i></button>
         </form>
       </div>
-      <a href="create.php" class="create">Create</a>
+              <?php
+              if (!empty($_SESSION['name'])) {
+                
+                echo  "<a href='create.php' class='create'>Create</a>";
+               }
+              ?>
     </div>
 
     <table class="post-table">
       <tr>
-        <th>ID</th>
+        <th>NO</th>
         <th>User</th>
         <th>Title</th>
         <th>Image</th>
@@ -101,20 +106,20 @@ include_once "../common/nav.php";
           <?php if (empty($_SESSION['name'])) : ?>
             <td>
 
-              <a href='detail.php?id=<?php echo $outs['id'] ?>'><i class='fa fa-file-text-o' style='font-size:18px;color:black;margin-right:10px;'></i></a>
+            <a href='detail.php?id=<?php echo $outs['id'] ?>' class="detail-btn">Info</a>
               
           <?php else : ?>
             <td>
 
-              <a href='detail.php?id=<?php echo $outs['id'] ?>'><i class='fa fa-file-text-o' style='font-size:18px;color:black;margin-right:10px;'></i></a>
+              <a href='detail.php?id=<?php echo $outs['id'] ?>' class="detail-btn">Info</a>
               <?php
               if (isset($_SESSION['user_id'])) {
                 $user_id = $_SESSION['user_id'];
                 if ($_SESSION['name'] == $user['name']) {
               ?>
-
-                  <a href='edit.php?id=<?php echo $outs['id'] ?>'><i class='fa fa-edit' style='font-size:18px;color:black;margin-right:10px'></i></a>
-                  <a href='delete.php?id=<?php echo $outs['id'] ?>'><i class='fa fa-close' style='font-size:18px;color:red'></i></a>
+                  
+                  <a href='edit.php?id=<?php echo $outs['id'] ?>' class="edit-btn">Edit</a>
+                  <a href='delete.php?id=<?php echo $outs['id'] ?>' class="del-btn">Del</a>
               <?php }
               }
 

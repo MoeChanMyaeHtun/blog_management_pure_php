@@ -14,34 +14,26 @@
                 $fileActualExt = strtolower(end($fileExt));
                 $allowed = array('jpg','jpeg','png','gif');
                 if (in_array($fileActualExt, $allowed)){
-                    if($fileError === 0){
-                        if($fileSize < 1000000){
-                            $fileNameNew = uniqid(rand(),true).".".$fileActualExt;
-                            $fileDestionation = '../img/posts/'.$fileNameNew;
-                            move_uploaded_file($fileTmpName,$fileDestionation);
-                        }
-                        else{
-                            echo "Your file is too big!";
-                        }
+                  if($fileError === 0){
+                          $fileNameNew = uniqid(rand(),true).".".$fileActualExt;
+                          $fileDestionation = '../img/posts/'.$fileNameNew;
+                          move_uploaded_file($fileTmpName,$fileDestionation);
                     }
-                        else{
-                            echo "There was an error uploading your file!";
-                        }
-                    }
-                else{
-                    echo"You cannot upload files of this type!";
-                }
+                     
+                    
+                  }
         $title = $_POST['title'];
         $description = $_POST['description'];
         $dt = new DateTime("now", new DateTimeZone('Asia/Yangon'));
         $created_date = $dt->format('Y.m.d , h:i:s');
         $updated_date = $dt->format('Y.m.d , h:i:s');
-        $user_id = $_SESSION['user_id'];       
+        $user_id = $_SESSION['user_id']; 
+              
         if ($title == ''){
-          $errors['title'] = "Post title must be empty";
+          $errors['title'] = "Title must be enter";
         }
         if ($description == ''){
-          $errors['description'] = "Post description must be empty";
+          $errors['description'] = "Description must be enter";
         }
 
         if (count($errors) == 0) {
@@ -79,7 +71,8 @@
     <Form method="POST" class="post-form" enctype="multipart/form-data">
       <label for="" class="post-ttl">Image</label>
       <div class="post-inputgp">
-      <input type="file" name="file" id="" class="post-input" >
+      <input type="file" name="file" id="" class="post-input" value="<?php echo isset($fileError) ? $fileError : ''?>">
+      <span class="danger"><?php echo isset($errors['file']) ? $errors['file']:''; ?> </span>
       </div>
 
       <label for="" class="post-ttl">Category</label>
