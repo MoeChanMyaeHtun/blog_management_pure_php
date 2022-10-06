@@ -28,7 +28,10 @@ if (isset($_POST['submit'])) {
 
     <form action="" method="post" class="clearfix">
 
-      <div class="cat-box clearfix">
+    <?php
+              if (!empty($_SESSION['name'])) {
+                ?>
+                 <div class="cat-box clearfix">
         <label for="" class="cat-ttl">Name</label>
         <div class="input-gp">
           <input type="text" class="cat-input" name="cat-name" value="<?php echo isset($cat_name) ? $cat_name : '' ?>" placeholder="Enter category name">
@@ -38,6 +41,10 @@ if (isset($_POST['submit'])) {
       <div class="cat-box2">
         <input type="submit" value="Submit" class=" cmn-btn cat-btn" name="submit">
       </div>
+                <?php
+               }
+              ?>
+     
 
     </form>
 
@@ -48,23 +55,40 @@ if (isset($_POST['submit'])) {
 
     <table class="cat-table">
       <tr>
-        <th>ID</th>
+        <th>No</th>
         <th>Name</th>
         <th>Created-date</th>
         <th>Update-date</th>
-        <th>Action</th>
+        <?php
+          if (!empty($_SESSION['name'])) {
+                ?>
+                  <th>Action</th>
+                <?php
+               }
+              ?>
+       
       </tr>
       <tr>
         <?php
+          $a= isset($_GET['page']) ? $_GET['page'] : 1;  
+          $i = ($a - 1) ;
         while ($out = mysqli_fetch_array($result)) {
           echo "<tr>";
-          echo "<td>$out[id]</td>";
+          echo "<td>".++$i."</td>";
           echo "<td>$out[name]</td>";
           echo "<td>$out[created_date]</td>";
           echo "<td>$out[updated_date]</td>";
-          echo "<td><a href='edit.php?id={$out['id']}'><i class='fa fa-edit' style='font-size:18px;color:black;margin-right:10px'></i></a>
-              <a href='delete.php?id={$out['id']}'><i class='fa fa-close' style='font-size:18px;color:red'></i></a></td>";
-          echo "</tr>";
+          ?>
+          <?php
+          if (!empty($_SESSION['name'])) {
+                ?>
+                  <td><a href='edit.php?id=<?php echo $out['id']?>'><i class='fa fa-edit' style='font-size:18px;color:black;margin-right:10px'></i></a>
+        <a href='delete.php?id=<?php echo $out['id']?>'><i class='fa fa-close' style='font-size:18px;color:red'></i></a></td>
+                <?php
+               }
+              ?>
+          
+          <?php echo "</tr>";
         }
         ?>
       </tr>
