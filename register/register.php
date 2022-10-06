@@ -83,7 +83,6 @@ if(isset($_POST['submit']))
         </div>
 
         <div class="box clearfix">
-          <label for="" class="form-ttl"></label>
           <input type="submit" value="Submit" class="cmn-btn" name="submit">
         </div>
       </form>
