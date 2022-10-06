@@ -6,7 +6,6 @@ if(isset($_POST['submit'])){
   $errors = [];
   $email = $_POST['email'];
   $pw = $_POST['pw'];
-
   if (!$email) {
     $errors['email'] = 'Email is required.';
   }
@@ -18,18 +17,17 @@ if(isset($_POST['submit'])){
   $query = "SELECT * FROM user";
   $result = mysqli_query($conn,$query);
   while ($out = mysqli_fetch_array($result)){
-    $db_email = $out['email'];
-    $db_pw = $out['password'];
-    if($db_email == $email && $db_pw == $pw )
+    if($out){
+      if(password_verify($pw,$out['password']))
     {
       $_SESSION['email'] = $email;
-      $_SESSION['password'] = $pw;
       $_SESSION['name']= $out['name'];
       $_SESSION['user_id']= $out['id'];
       
       header("Location:../post/show.php");
     }
-  }
+    }
+}
 }
 
 ?>
