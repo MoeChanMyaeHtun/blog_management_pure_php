@@ -5,7 +5,7 @@
 }
 .linner{
   max-width: 1280px;
-  width: 98%;
+  width: 95%;
   margin: 0 auto;
 }
 .clearfix::after{
@@ -56,5 +56,5 @@ a{
 }
 .danger{
   color: red;
-  font-size: 12px;
+  font-size: 14px;
 }

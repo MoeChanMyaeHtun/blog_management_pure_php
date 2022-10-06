@@ -45,17 +45,23 @@ padding: 20px 0;
 .txt-cmn{
   padding: 0 20px;
 }
+.comdiv{
+  float: left ;
+  width: 70% ;
+}
 .commentBox{
-	width: 70% ;
+	width: 100%;
 	padding: 10px ;
 	outline: none ;
 	font-size: 80% ;
 	resize: vertical ;
 	border: 1px solid rgba(114, 88, 167,0.6);
 	border-bottom: 4px solid rgba(114, 88, 167,0.6) ;
-  float: left ;
+  
 }
-
+.upcmn{
+  width: 70%;
+}
  p {
 	margin-left: 20px;
 	line-height: 30px;
@@ -121,4 +127,23 @@ padding: 20px 0;
 }
 .more{
   margin-top: 5px;
+}
+.detail-btn{
+  padding:10px 5px;
+  background-color: #00688B;
+  border: 1px solid #00688B;
+    border-radius: 5px 0 0 5px;
+}
+.edit-btn{
+  padding:10px 5px;
+  /* background-color: #00688B; */
+  border: 1px solid #5f9a81;
+    /* border-radius: 5px 0 0 5px; */
+    color: #5f9a81;
+}
+.del-btn{
+  padding:10px 5px;
+  background-color: #ff0000;
+  border: 1px solid #ff0000;
+    border-radius:0 5px 5px 0 ;
 }

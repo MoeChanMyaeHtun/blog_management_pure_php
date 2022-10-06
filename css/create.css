@@ -1,5 +1,6 @@
+.sec-create {    margin-top: 46px;}
 .sec-create .form-create{
-  width: 800px;
+  width: 400px;
   margin: 0 auto;
 }
 .sec-create .form-create .form-ttl{
@@ -7,12 +8,13 @@
   font-family: 'Roboto',sans-serif;
   font-weight: 600;
   margin: 10px 30px 0 0;
-  float: left;
+  /* float: left; */
   width:200px ;
 }
 .sec-create .form-create .input-gp{
   width: 400px;
-  float: right;
+  margin-top: 10px;
+  /* float: left; */
 }
 .sec-create .form-create .form-input{
   padding: 5px 10px;

@@ -10,7 +10,7 @@
   width: 500px;
   margin: 0 auto;
   border: 1px solid gray;
-  background-color: #7258a7;
+  background-color: rgba(114, 88, 167,0.9);
   padding:0 20px;
   border-radius: 10px;
 }
@@ -21,28 +21,29 @@
 width: 100%;
 padding: 10px 0 10px 20px;
 border-radius: 10px;
-background-color: rgba(110, 145, 138,0.2);
-border:1px solid rgba(110, 145, 138,0.3) ;
+background-color: rgba(255, 255, 255,0.6);
+border:1px solid rgba(255, 255, 255,0.6) ;
 outline: rgba(110, 145, 138,0.3);
 }
 .sec-login .login-form .formbox{
   margin-bottom: 20px;
 }
 .sec-login .login-form .form-input::placeholder{
-  color: #6e918a;
+  color: #ffffff;
 }
 .sec-login .login-form .cmn-btn{
   width: 100px;
   margin-left: 188px;
-  background-color: rgba(110, 145, 138,0.4)  ;
+  background-color: rgba(255, 255, 255,0.6) ;
   padding: 10px;
   border: 1px solid #ffffff;
   margin-top: 10px;
 }
 .sec-login .login-form .cmn-btn:hover{
-  border: 1px solid rgba(110, 145, 138,0.4) ;
-  color: rgba(110, 145, 138,0.4) ;
+  color: rgb(114, 88, 167,);
+	border: 1px solid rgba(114, 88, 167,0.6);
   background-color: #ffffff;
+
 }
 .sec-login .txt-box {
   margin: 10px 0 20px;
