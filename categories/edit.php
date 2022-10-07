@@ -14,12 +14,12 @@ if (isset($_POST['edit'])) {
     $errors['cat-name'] = "Category name must be enter";
   }
   if (count($errors) == 0) {
-  $sql = "UPDATE categories SET name='$cat_name' WHERE id=$id";
-  $result = mysqli_query($conn, $sql);
-  if ($result) {
-    header("Location: create.php");
+    $sql = "UPDATE categories SET name='$cat_name' WHERE id=$id";
+    $result = mysqli_query($conn, $sql);
+    if ($result) {
+      header("Location: create.php");
+    }
   }
-}
 }
 ?>
 <?php include "../common/header.php"; ?>
