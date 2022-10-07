@@ -6,6 +6,7 @@
   $result = mysqli_query($conn, $sql);
   $row = mysqli_fetch_assoc($result);
   $user_id = $_SESSION['user_id'];
+  
   if($row['user_id']!= $_SESSION['user_id']){
     header('location:show.php');
   }

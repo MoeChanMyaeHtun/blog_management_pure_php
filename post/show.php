@@ -43,17 +43,17 @@ include_once "../common/nav.php";
           <button type="submit" name="search-btn"><i class="fa fa-search"></i></button>
         </form>
       </div>
-              <?php
-              if (!empty($_SESSION['name'])) {
-                
-                echo  "<a href='create.php' class='create'>Create</a>";
-               }
-              ?>
+      <?php
+      if (!empty($_SESSION['name'])) {
+
+        echo  "<a href='create.php' class='create'>Create</a>";
+      }
+      ?>
     </div>
 
     <table class="post-table">
       <tr>
-        <th>NO</th>
+        <th class="no">NO</th>
         <th>User</th>
         <th>Title</th>
         <th>Image</th>
@@ -68,11 +68,11 @@ include_once "../common/nav.php";
         $sql = "SELECT * FROM post ; ";
 
         $result = mysqli_query($conn, $query);
-        $a= isset($_GET['page']) ? $_GET['page'] : 1;  
+        $a = isset($_GET['page']) ? $_GET['page'] : 1;
         $i = ($a - 1) * $results_per_page;
-          while ($outs = mysqli_fetch_array($result)) {
-            echo "<tr>";
-            echo "<td>".++$i."</td>";
+        while ($outs = mysqli_fetch_array($result)) {
+          echo "<tr>";
+          echo "<td class='no'>" . ++$i . "</td>";
 
           $usql = "SELECT * FROM user WHERE id={$outs['user_id']}";
           $uquery = mysqli_query($conn, $usql);
@@ -106,9 +106,9 @@ include_once "../common/nav.php";
           <?php if (empty($_SESSION['name'])) : ?>
             <td>
 
-            <a href='detail.php?id=<?php echo $outs['id'] ?>' class="detail-btn">Info</a>
-              
-          <?php else : ?>
+              <a href='detail.php?id=<?php echo $outs['id'] ?>' class="detail-btn">Info</a>
+
+            <?php else : ?>
             <td>
 
               <a href='detail.php?id=<?php echo $outs['id'] ?>' class="detail-btn">Info</a>
@@ -117,20 +117,20 @@ include_once "../common/nav.php";
                 $user_id = $_SESSION['user_id'];
                 if ($_SESSION['name'] == $user['name']) {
               ?>
-                  
+
                   <a href='edit.php?id=<?php echo $outs['id'] ?>' class="edit-btn">Edit</a>
                   <a href='delete.php?id=<?php echo $outs['id'] ?>' class="del-btn">Del</a>
               <?php }
               }
 
               ?>
-               <?php endif; ?>
+            <?php endif; ?>
             </td>
-         
 
-        <?php }
+
+          <?php }
         echo "</tr>";
-        ?>
+          ?>
     </table>
 
     <div class="container">
