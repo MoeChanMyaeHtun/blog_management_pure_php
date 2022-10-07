@@ -1,39 +1,44 @@
-.post-mv .post-form{
+.post-mv .post-form {
   width: 50%;
   margin: 60px auto;
-  font-family: 'Roboto',sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 700;
 }
-.post-mv .post-ttl{
+
+.post-mv .post-ttl {
   font-size: 18px;
 }
-.post-mv .post-input{
+
+.post-mv .post-input {
   width: 100%;
   padding: 12px 20px;
 
   box-sizing: border-box;
   border: none;
-  border-bottom: 2px solid rgba(114, 88, 167,0.4);
-  outline:none;
-  
+  border-bottom: 2px solid rgba(114, 88, 167, 0.4);
+  outline: none;
+
 }
-.post-mv .post-inputgp
-{
+
+.post-mv .post-inputgp {
   margin: 15px 0;
 }
-.post-mv .cmn-btn{
+
+.post-mv .cmn-btn {
   width: 100px;
 }
-.post-mv .clear{
+
+.post-mv .clear {
   float: left;
 }
-.post-mv .create{
+
+.post-mv .create {
   float: right;
 }
 
 /* post.php */
 
-.sec-post .create{
+.sec-post .create {
   background-color: #7258a7;
   color: #ffffff;
   float: right;
@@ -42,36 +47,43 @@
   text-align: center;
   padding: 10px 0;
   font-size: 18px;
-  font-family: 'Roboto',sans-serif;
-  font-weight: 700 ;
-  border:1px solid #7258a7;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  border: 1px solid #7258a7;
   border-radius: 8px;
 }
-.sec-post .create:hover{
-  background-color:#ffffff ;
+
+.sec-post .create:hover {
+  background-color: #ffffff;
   color: #7258a7;
 }
+
 .sec-post .post-table {
   border-collapse: collapse;
-  width:1000px;
-  margin:30px auto;
-  
+  width: 1150px;
+  margin: 30px auto;
+
 }
 
-.sec-post .post-table th{
+.no {
+  width: 50px;
+}
+
+.sec-post .post-table th {
   padding: 10px;
   text-align: center;
   border-bottom: 1px solid #ddd;
-  font-family: 'Roboto',sans-serif;
-  font-weight: 700 ;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
   font-size: 24px;
 }
+
 .sec-post .post-table td {
   padding: 10px;
   text-align: center;
   border-bottom: 1px solid #ddd;
-  font-family: 'Roboto',sans-serif;
-  font-weight: 400 ;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
 }
 
 .search-container {
@@ -79,7 +91,7 @@
   margin-top: 100px;
 }
 
-.search{
+.search {
   padding: 6px;
   margin-top: 8px;
   font-size: 17px;
@@ -103,11 +115,11 @@
 
 
 /*Resize the wrap to see the search bar change!*/
-.wrap{
+.wrap {
   width: 30%;
 }
+
 /* edit.php */
-.post-img{
+.post-img {
   width: 100px;
 }
-
