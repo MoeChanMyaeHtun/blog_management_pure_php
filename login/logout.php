@@ -4,6 +4,6 @@
  unset($_SESSION['name']);
     unset($_SESSION['id']);
     
-    header("location:../index.php");
+    header("location:../post/show.php");
 
 ?>
