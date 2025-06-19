@@ -5,7 +5,7 @@
 ## Installation
 
 ```
-git clone https://github.com/scm-ojt/blog-batch-4-moechanmyaehtun.git
+git clone https://github.com/MoeChanMyaeHtun/blog_management_pure_php.git
 ```
 
 - Create a database and import `blog.sql`
